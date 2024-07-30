@@ -1,7 +1,9 @@
 import { a } from "@aws-amplify/backend";
 
-export const Todo = a
+export const FAQ = a
   .model({
-    content: a.string(),
+    uuid: a.string().required(),
+    question: a.string(),
+    answer: a.string(),
   })
   .authorization((allow) => [allow.owner()]);

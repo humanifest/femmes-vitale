@@ -1,15 +1,13 @@
 import { a } from "@aws-amplify/backend";
 import { m } from "../models";
 
-export const Like = a
+export const AutomatedUpdate = a
   .model({
     uuid: a.string().required(),
     userProfileId: a.id(),
     userProfile: a.belongsTo(m.UserProfile, "userProfileId"),
-    transactionId: a.id(),
-    transaction: a.belongsTo(m.Transaction, "transactionId"),
+    updateType: a.string(),
+    updateData: a.json(), // JSON format for update data
+    timestamp: a.datetime(),
   })
-  .authorization((allow) => [
-    allow.owner(),
-    allow.authenticated().to(["read"]),
-  ]);
+  .authorization((allow) => [allow.owner()]);

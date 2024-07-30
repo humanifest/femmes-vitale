@@ -1,16 +1,13 @@
 import { a } from "@aws-amplify/backend";
 import { m } from "../models";
 
-export const BankTransferType = a.enum(["withdrawal", "deposit"]);
-
-export const BankTransfer = a
+export const SymptomLog = a
   .model({
     uuid: a.string().required(),
     userProfileId: a.id(),
     userProfile: a.belongsTo(m.UserProfile, "userProfileId"),
-    source: a.string(),
-    amount: a.float(),
-    type: BankTransferType,
-    transactionId: a.string(),
+    date: a.date(),
+    symptom: a.string(),
+    severity: a.string(), // e.g., 'Mild', 'Moderate', 'Severe'
   })
   .authorization((allow) => [allow.owner()]);

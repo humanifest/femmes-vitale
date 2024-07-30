@@ -1,14 +1,14 @@
 import { a } from "@aws-amplify/backend";
 import { m } from "../models";
 
-export const UserContacts = a;
-
-export const Contact = a
+export const ProgressReport = a
   .model({
     uuid: a.string().required(),
     userProfileId: a.id(),
     userProfile: a.belongsTo(m.UserProfile, "userProfileId"),
-    contactUseProfileId: a.id(),
-    contactuserProfile: a.belongsTo(m.UserProfile, "contactUseProfileId"),
+    goalId: a.id(),
+    goal: a.belongsTo(m.HealthGoal, "goalId"),
+    reportDate: a.date(),
+    reportDetails: a.string(),
   })
   .authorization((allow) => [allow.owner()]);
