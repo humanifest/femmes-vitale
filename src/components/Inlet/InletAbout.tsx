@@ -1,87 +1,89 @@
 import { COMPANY_NAME } from "@/env/env.api";
 import Inlet from "./Inlet";
-import { Heading } from "@aws-amplify/ui-react";
 import { ROUTES } from "@/src/contexts/routes";
 import { Link } from "react-router-dom";
+import { styleBackgroundImage } from "@/src/utils";
+import aboutUsBG from "@/src/assets/images/about-us.jpg";
 
 export default function PageAbout() {
   return (
     <Inlet id="about">
-      <Heading level={2}>About Us</Heading>
-      <Heading level={4}>Innovative Solutions, Tailored to Your Needs</Heading>
+      <div className="bg-fuchsia-50 text-gray-800">
+        {/* Hero Section with Background Image */}
+        <section
+          className="relative py-16 px-4 sm:px-6 lg:px-8 bg-cover bg-center"
+          style={{ ...styleBackgroundImage(aboutUsBG) }}
+        >
+          <div className="absolute inset-0 bg-black opacity-30"></div>
+          <div className="relative max-w-3xl mx-auto text-center z-10">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
+              Our Commitment to Women's Health
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl text-white mb-8">
+              At {COMPANY_NAME}, our mission is to bridge the gap in women's
+              health by providing a supportive and comprehensive platform. We
+              believe in the power of community-driven resources and are
+              committed to empowering women through shared knowledge and
+              innovation.
+            </p>
+          </div>
+        </section>
 
-      <p>
-        Welcome to <strong>{COMPANY_NAME}</strong>, where we bring your digital
-        vision to life. As a dynamic and forward-thinking software company, we
-        specialize in creating customizable software solutions that cater to the
-        unique needs of each client. Our passion lies in web development and
-        cloud infrastructure, ensuring that we stay at the forefront of
-        technological advancements to provide you with cutting-edge, reliable,
-        and scalable solutions.
-      </p>
+        {/* Values Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-fuchsia-600 mb-6">
+              Our Core Values
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-8">
+              We are dedicated to fostering a community that supports women's
+              health through empathy, innovation, integrity, and empowerment.
+              Our values guide us in delivering the most impactful and
+              personalized health solutions.
+            </p>
+            <ul className="list-disc list-inside text-left space-y-4 mx-auto max-w-xl">
+              <li className="text-base sm:text-lg">
+                <strong>Empathy:</strong> Understanding and addressing the
+                unique needs of women with compassion and support.
+              </li>
+              <li className="text-base sm:text-lg">
+                <strong>Innovation:</strong> Utilizing the latest technology and
+                ideas to offer cutting-edge health solutions.
+              </li>
+              <li className="text-base sm:text-lg">
+                <strong>Integrity:</strong> Ensuring transparency and honesty in
+                all aspects of our operations and communications.
+              </li>
+              <li className="text-base sm:text-lg">
+                <strong>Empowerment:</strong> Equipping women with the tools and
+                knowledge they need to manage their health confidently.
+              </li>
+            </ul>
+          </div>
+        </section>
 
-      <Heading level={4}>Expertise Meets Creativity</Heading>
-
-      <p>
-        Our team is comprised of highly skilled professionals, each bringing a
-        wealth of experience in software development, cloud technology, and
-        digital innovation. We believe in a collaborative approach, working
-        closely with our clients to understand their specific challenges and
-        objectives. This synergy allows us to craft tailor-made solutions that
-        not only solve problems but also drive growth and efficiency.
-      </p>
-
-      <Heading level={4}>Our Services</Heading>
-      <ul>
-        <li>
-          <Heading level={6}>Custom Web Development</Heading>: From responsive
-          websites to complex web applications, our web development services are
-          designed to offer seamless, user-friendly digital experiences that
-          resonate with your target audience.
-        </li>
-        <li>
-          <Heading level={6}>Cloud Infrastructure Solutions</Heading>: We
-          empower businesses with robust and secure cloud infrastructure
-          services. Whether it's cloud migration, optimization, or ongoing
-          management, our experts ensure your cloud journey is smooth and
-          beneficial.
-        </li>
-        <li>
-          <Heading level={6}>Software Customization</Heading>: Understanding
-          that one size does not fit all, we offer extensive software
-          customization services. Our solutions are designed to align perfectly
-          with your business processes, goals, and future growth.
-        </li>
-      </ul>
-
-      <Heading level={4}>Commitment to Excellence</Heading>
-
-      <p>
-        Quality and customer satisfaction are at the heart of everything we do.
-        We are committed to delivering not just solutions, but value that makes
-        a tangible difference in your business. Our agile methodologies,
-        combined with our dedication to excellence, ensure that we deliver
-        projects on time, within budget, and above expectations.
-      </p>
-
-      <Heading level={4}>Let's Build Something Great Together</Heading>
-
-      <p>
-        At <strong>{COMPANY_NAME}</strong>, your vision is our mission. We are
-        excited to partner with you to create software solutions that not only
-        meet today's needs but also propel you into the future. Contact us to
-        discuss how we can turn your ideas into reality.
-      </p>
-
-      <p>
-        Thank you for considering <strong>{COMPANY_NAME}</strong> for your
-        software development needs. We look forward to the opportunity to work
-        with you and bring your digital dreams to life.
-      </p>
-
-      <p>
-        <Link to={ROUTES.contact._}>Contact Us</Link>
-      </p>
+        {/* Community Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-fuchsia-50">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-fuchsia-600 mb-6">
+              Building a Supportive Community
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-8">
+              Our platform is more than just a tool—it's a community. We connect
+              users with valuable resources, expert advice, and peer support. By
+              fostering a space where women can share their experiences and
+              learn from each other, we enhance the collective well-being and
+              empower every individual.
+            </p>
+            <Link
+              to={ROUTES.contact._}
+              className="bg-amber-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-amber-600 transition duration-300"
+            >
+              Explore Community Resources
+            </Link>
+          </div>
+        </section>
+      </div>
     </Inlet>
   );
 }

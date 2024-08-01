@@ -1,19 +1,42 @@
+import heroImage from "@/src/assets/images/hero-image.jpg";
+import { ROUTES } from "@/src/contexts/routes";
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
-    <header className="relative h-screen bg-cover bg-center">
-      <div className="absolute inset-0 bg-black opacity-50">
-        {/* Dark overlay */}
-      </div>
+    <header>
+      <section className=" text-center py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-primary-700 mb-4 leading-tight">
+            Empower Your Health: Track, Plan, and Thrive
+          </h1>
 
-      <div className="relative z-10 text-center text-white flex flex-col items-center justify-center h-full px-4">
-        <h1 className="text-5xl font-bold mb-4">
-          Transform Your Business with Expert Software Solutions
-        </h1>
-        <p className="text-2xl mb-8">
-          We provide cutting-edge software consulting services to help you
-          achieve your business goals.
-        </p>
-      </div>
+          <div className="mt-8">
+            <p className="text-base sm:text-lg lg:text-xl text-darks-primary mb-6">
+              Comprehensive tools for tracking menstrual cycles, managing
+              fertility, and accessing personalized health insights.
+            </p>
+            <img
+              src={heroImage}
+              alt="App Screenshots"
+              className="mx-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+        <Link
+          to={ROUTES.access.dashboard._}
+          className="bg-secondary-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-secondary-600 transition duration-300"
+        >
+          Get Started
+        </Link>
+        <br />
+        <Link
+          to={ROUTES.about._}
+          className="text-amber-500 underline mt-4 inline-block hover:text-amber-600 transition duration-300"
+        >
+          Learn More
+        </Link>
+      </section>
     </header>
   );
 }
