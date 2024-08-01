@@ -9,6 +9,7 @@ export const UserProfile = a
     email: a.string(),
     profileOwner: a.string(),
     avatar: a.string(),
+    birthday: a.date(),
     ovulationCycles: a.hasMany(m.OvulationCycle, "userProfileId"),
     ovulationPredictions: a.hasMany(m.OvulationPrediction, "userProfileId"),
     menstrualHealthInsights: a.hasMany(

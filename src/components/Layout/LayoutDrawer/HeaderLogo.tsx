@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./HeaderLogo.module.css";
-import logo from "@/src/assets/images/avaelusLogo.jpg";
+import logo from "@/src/assets/images/logo.jpg";
 import { useHydratedUrls } from "@/src/contexts/hooks";
 import { styleHide } from "@/src/utils";
 import { Divider } from "@aws-amplify/ui-react";

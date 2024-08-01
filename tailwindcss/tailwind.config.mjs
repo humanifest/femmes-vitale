@@ -8,8 +8,8 @@ export default {
   darkMode: "class",
   theme: {
     colors: ({ colors }) => {
-      const cooler = colors.teal;
-      const warmer = colors.fuchsia;
+      const warmer = colors.amber;
+      const cooler = colors.fuchsia;
 
       return {
         lights: {
