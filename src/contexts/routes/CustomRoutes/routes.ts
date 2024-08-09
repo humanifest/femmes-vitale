@@ -1,9 +1,7 @@
 import { __, mMap } from "@avaelus/super-project-utils";
 
 const CUSTOM_ROUTES_BLUEPRINTS = {
-  todo: {
-    ":todoId": __,
-  },
+  userProfile: __,
   transaction: {
     ":transactionId": __,
   },
