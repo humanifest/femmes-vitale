@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <div>
       <h1>Dashboard</h1>
-      <Link to={ROUTES.feature.userProfile._}>Update your User Profile</Link>
+      <Link to={ROUTES.access.profile._}>Update your User Profile</Link>
     </div>
   );
 };

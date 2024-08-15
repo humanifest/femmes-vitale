@@ -1,17 +1,16 @@
-import { ProviderClientContext } from "@/src/contexts/providers/ProviderClient/ProviderClient";
 import { AuthContext } from "@/src/contexts/providers/ProviderAuth";
-import { _UserProfile } from "@/data-schema";
+import { type _UserProfile } from "@/data-schema";
 import { useContext, useEffect, useState, useCallback } from "react";
 
-// import { useNavigate } from "react-router-dom";
-// import { ROUTES } from "@/src/contexts/routes";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "@/src/contexts/routes";
 import { UserProfileUpdateForm } from "@/src/components";
+import client from "@/src/utils/amplifyClient";
 
 export default function UserProfile() {
   const { state: auth } = useContext(AuthContext);
   const [profile, setProfile] = useState<_UserProfile>();
-  const client = useContext(ProviderClientContext);
-  //   const nav = useNavigate();
+  const nav = useNavigate();
   const getProfile = useCallback(async () => {
     const { data: profiles } = await client.models.UserProfile.list({
       filter: {
@@ -21,11 +20,11 @@ export default function UserProfile() {
       },
     });
     profiles.length && setProfile(profiles[0]);
-  }, [client.models.UserProfile, auth]);
+  }, [auth]);
 
   useEffect(() => {
     getProfile();
-  }, [client.models.UserProfile, auth, getProfile]);
+  }, [auth, getProfile]);
 
   return (
     <UserProfileUpdateForm
@@ -47,6 +46,10 @@ export default function UserProfile() {
           display: "none",
           disabled: true,
         },
+      }}
+      onSubmit={(fields) => {
+        nav(ROUTES.access.dashboard._);
+        return fields;
       }}
     />
   );
