@@ -21,7 +21,6 @@ export type UserProfile = {
   __typename: "UserProfile",
   OvulationCycleAnalysis?: ModelOvulationCycleAnalysisConnection | null,
   articles?: ModelArticleConnection | null,
-  automatedUpdates?: ModelAutomatedUpdateConnection | null,
   avatar?: string | null,
   basalBodyTemperatures?: ModelBasalBodyTemperatureConnection | null,
   birthday?: string | null,
@@ -158,26 +157,6 @@ export type ModelArticleConnection = {
   __typename: "ModelArticleConnection",
   items:  Array<Article | null >,
   nextToken?: string | null,
-};
-
-export type ModelAutomatedUpdateConnection = {
-  __typename: "ModelAutomatedUpdateConnection",
-  items:  Array<AutomatedUpdate | null >,
-  nextToken?: string | null,
-};
-
-export type AutomatedUpdate = {
-  __typename: "AutomatedUpdate",
-  createdAt: string,
-  id: string,
-  owner?: string | null,
-  timestamp?: string | null,
-  updateData?: string | null,
-  updateType?: string | null,
-  updatedAt: string,
-  userProfile?: UserProfile | null,
-  userProfileId?: string | null,
-  uuid: string,
 };
 
 export type ModelBasalBodyTemperatureConnection = {
@@ -474,6 +453,18 @@ export type WearableData = {
   uuid: string,
 };
 
+export type AutomatedUpdate = {
+  __typename: "AutomatedUpdate",
+  createdAt: string,
+  id: string,
+  owner?: string | null,
+  timestamp?: string | null,
+  updateData?: string | null,
+  updateType?: string | null,
+  updatedAt: string,
+  uuid: string,
+};
+
 export type FAQ = {
   __typename: "FAQ",
   answer?: string | null,
@@ -568,8 +559,13 @@ export type ModelAutomatedUpdateFilterInput = {
   updateData?: ModelStringInput | null,
   updateType?: ModelStringInput | null,
   updatedAt?: ModelStringInput | null,
-  userProfileId?: ModelIDInput | null,
   uuid?: ModelStringInput | null,
+};
+
+export type ModelAutomatedUpdateConnection = {
+  __typename: "ModelAutomatedUpdateConnection",
+  items:  Array<AutomatedUpdate | null >,
+  nextToken?: string | null,
 };
 
 export type ModelBasalBodyTemperatureFilterInput = {
@@ -961,7 +957,6 @@ export type ModelAutomatedUpdateConditionInput = {
   updateData?: ModelStringInput | null,
   updateType?: ModelStringInput | null,
   updatedAt?: ModelStringInput | null,
-  userProfileId?: ModelIDInput | null,
   uuid?: ModelStringInput | null,
 };
 
@@ -970,7 +965,6 @@ export type CreateAutomatedUpdateInput = {
   timestamp?: string | null,
   updateData?: string | null,
   updateType?: string | null,
-  userProfileId?: string | null,
   uuid: string,
 };
 
@@ -1561,7 +1555,6 @@ export type UpdateAutomatedUpdateInput = {
   timestamp?: string | null,
   updateData?: string | null,
   updateType?: string | null,
-  userProfileId?: string | null,
   uuid?: string | null,
 };
 
@@ -1808,7 +1801,6 @@ export type ModelSubscriptionAutomatedUpdateFilterInput = {
   updateData?: ModelSubscriptionStringInput | null,
   updateType?: ModelSubscriptionStringInput | null,
   updatedAt?: ModelSubscriptionStringInput | null,
-  userProfileId?: ModelSubscriptionIDInput | null,
   uuid?: ModelSubscriptionStringInput | null,
 };
 
@@ -2173,18 +2165,6 @@ export type GetAutomatedUpdateQuery = {
     updateData?: string | null,
     updateType?: string | null,
     updatedAt: string,
-    userProfile?:  {
-      __typename: "UserProfile",
-      avatar?: string | null,
-      birthday?: string | null,
-      createdAt: string,
-      email?: string | null,
-      id: string,
-      profileOwner?: string | null,
-      updatedAt: string,
-      uuid: string,
-    } | null,
-    userProfileId?: string | null,
     uuid: string,
   } | null,
 };
@@ -2850,10 +2830,6 @@ export type GetUserProfileQuery = {
       __typename: "ModelArticleConnection",
       nextToken?: string | null,
     } | null,
-    automatedUpdates?:  {
-      __typename: "ModelAutomatedUpdateConnection",
-      nextToken?: string | null,
-    } | null,
     avatar?: string | null,
     basalBodyTemperatures?:  {
       __typename: "ModelBasalBodyTemperatureConnection",
@@ -3012,7 +2988,6 @@ export type ListAutomatedUpdatesQuery = {
       updateData?: string | null,
       updateType?: string | null,
       updatedAt: string,
-      userProfileId?: string | null,
       uuid: string,
     } | null >,
     nextToken?: string | null,
@@ -3589,18 +3564,6 @@ export type CreateAutomatedUpdateMutation = {
     updateData?: string | null,
     updateType?: string | null,
     updatedAt: string,
-    userProfile?:  {
-      __typename: "UserProfile",
-      avatar?: string | null,
-      birthday?: string | null,
-      createdAt: string,
-      email?: string | null,
-      id: string,
-      profileOwner?: string | null,
-      updatedAt: string,
-      uuid: string,
-    } | null,
-    userProfileId?: string | null,
     uuid: string,
   } | null,
 };
@@ -4286,10 +4249,6 @@ export type CreateUserProfileMutation = {
       __typename: "ModelArticleConnection",
       nextToken?: string | null,
     } | null,
-    automatedUpdates?:  {
-      __typename: "ModelAutomatedUpdateConnection",
-      nextToken?: string | null,
-    } | null,
     avatar?: string | null,
     basalBodyTemperatures?:  {
       __typename: "ModelBasalBodyTemperatureConnection",
@@ -4452,18 +4411,6 @@ export type DeleteAutomatedUpdateMutation = {
     updateData?: string | null,
     updateType?: string | null,
     updatedAt: string,
-    userProfile?:  {
-      __typename: "UserProfile",
-      avatar?: string | null,
-      birthday?: string | null,
-      createdAt: string,
-      email?: string | null,
-      id: string,
-      profileOwner?: string | null,
-      updatedAt: string,
-      uuid: string,
-    } | null,
-    userProfileId?: string | null,
     uuid: string,
   } | null,
 };
@@ -5149,10 +5096,6 @@ export type DeleteUserProfileMutation = {
       __typename: "ModelArticleConnection",
       nextToken?: string | null,
     } | null,
-    automatedUpdates?:  {
-      __typename: "ModelAutomatedUpdateConnection",
-      nextToken?: string | null,
-    } | null,
     avatar?: string | null,
     basalBodyTemperatures?:  {
       __typename: "ModelBasalBodyTemperatureConnection",
@@ -5315,18 +5258,6 @@ export type UpdateAutomatedUpdateMutation = {
     updateData?: string | null,
     updateType?: string | null,
     updatedAt: string,
-    userProfile?:  {
-      __typename: "UserProfile",
-      avatar?: string | null,
-      birthday?: string | null,
-      createdAt: string,
-      email?: string | null,
-      id: string,
-      profileOwner?: string | null,
-      updatedAt: string,
-      uuid: string,
-    } | null,
-    userProfileId?: string | null,
     uuid: string,
   } | null,
 };
@@ -6012,10 +5943,6 @@ export type UpdateUserProfileMutation = {
       __typename: "ModelArticleConnection",
       nextToken?: string | null,
     } | null,
-    automatedUpdates?:  {
-      __typename: "ModelAutomatedUpdateConnection",
-      nextToken?: string | null,
-    } | null,
     avatar?: string | null,
     basalBodyTemperatures?:  {
       __typename: "ModelBasalBodyTemperatureConnection",
@@ -6178,18 +6105,6 @@ export type OnCreateAutomatedUpdateSubscription = {
     updateData?: string | null,
     updateType?: string | null,
     updatedAt: string,
-    userProfile?:  {
-      __typename: "UserProfile",
-      avatar?: string | null,
-      birthday?: string | null,
-      createdAt: string,
-      email?: string | null,
-      id: string,
-      profileOwner?: string | null,
-      updatedAt: string,
-      uuid: string,
-    } | null,
-    userProfileId?: string | null,
     uuid: string,
   } | null,
 };
@@ -6875,10 +6790,6 @@ export type OnCreateUserProfileSubscription = {
       __typename: "ModelArticleConnection",
       nextToken?: string | null,
     } | null,
-    automatedUpdates?:  {
-      __typename: "ModelAutomatedUpdateConnection",
-      nextToken?: string | null,
-    } | null,
     avatar?: string | null,
     basalBodyTemperatures?:  {
       __typename: "ModelBasalBodyTemperatureConnection",
@@ -7041,18 +6952,6 @@ export type OnDeleteAutomatedUpdateSubscription = {
     updateData?: string | null,
     updateType?: string | null,
     updatedAt: string,
-    userProfile?:  {
-      __typename: "UserProfile",
-      avatar?: string | null,
-      birthday?: string | null,
-      createdAt: string,
-      email?: string | null,
-      id: string,
-      profileOwner?: string | null,
-      updatedAt: string,
-      uuid: string,
-    } | null,
-    userProfileId?: string | null,
     uuid: string,
   } | null,
 };
@@ -7738,10 +7637,6 @@ export type OnDeleteUserProfileSubscription = {
       __typename: "ModelArticleConnection",
       nextToken?: string | null,
     } | null,
-    automatedUpdates?:  {
-      __typename: "ModelAutomatedUpdateConnection",
-      nextToken?: string | null,
-    } | null,
     avatar?: string | null,
     basalBodyTemperatures?:  {
       __typename: "ModelBasalBodyTemperatureConnection",
@@ -7904,18 +7799,6 @@ export type OnUpdateAutomatedUpdateSubscription = {
     updateData?: string | null,
     updateType?: string | null,
     updatedAt: string,
-    userProfile?:  {
-      __typename: "UserProfile",
-      avatar?: string | null,
-      birthday?: string | null,
-      createdAt: string,
-      email?: string | null,
-      id: string,
-      profileOwner?: string | null,
-      updatedAt: string,
-      uuid: string,
-    } | null,
-    userProfileId?: string | null,
     uuid: string,
   } | null,
 };
@@ -8599,10 +8482,6 @@ export type OnUpdateUserProfileSubscription = {
     } | null,
     articles?:  {
       __typename: "ModelArticleConnection",
-      nextToken?: string | null,
-    } | null,
-    automatedUpdates?:  {
-      __typename: "ModelAutomatedUpdateConnection",
       nextToken?: string | null,
     } | null,
     avatar?: string | null,

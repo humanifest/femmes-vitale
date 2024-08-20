@@ -32,6 +32,6 @@
     "types": ["vite/client"]
   },
   "include": ["src", "tailwindcss", "postcss/config.js"],
-  "exclude": [],
+  "exclude": ["node_modules", "build", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
