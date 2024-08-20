@@ -15,7 +15,6 @@ export default function DevRouter() {
         <>
           <Route path={devRoutes._} element={<DevStage />}>
             <Route index path={devRoutes.effects._} element={<DevEffects />} />
-            <Route path={devRoutes.transaction._}></Route>
           </Route>
         </>
       ) : (

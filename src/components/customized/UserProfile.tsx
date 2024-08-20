@@ -9,8 +9,8 @@ import { UserProfileUpdateForm } from "@/src/components";
 import client from "@/src/utils/amplifyClient";
 
 export default function UserProfile() {
-  const { state: auth } = useContext<_UserProfile>(AuthContext);
-  const [profile, setProfile] = useState();
+  const { state: auth } = useContext(AuthContext);
+  const [profile, setProfile] = useState<_UserProfile>();
   const nav = useNavigate();
   const getProfile = useCallback(async () => {
     const { data: profiles } = await client.models.UserProfile.list({

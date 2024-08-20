@@ -11,7 +11,6 @@ export enum m {
   OvulationCycle = "OvulationCycle",
   OvulationCycleAnalysis = "OvulationCycleAnalysis",
   OvulationPrediction = "OvulationPrediction",
-  OvulationTest = "OvulationTest",
   PrivacySetting = "PrivacySetting",
   SymptomLog = "SymptomLog",
   UserProfile = "UserProfile",
@@ -35,7 +34,6 @@ export type _MedicationLog = Models[m.MedicationLog];
 export type _OvulationCycle = Models[m.OvulationCycle];
 export type _OvulationCycleAnalysis = Models[m.OvulationCycleAnalysis];
 export type _OvulationPrediction = Models[m.OvulationPrediction];
-export type _OvulationTest = Models[m.OvulationTest];
 export type _PrivacySetting = Models[m.PrivacySetting];
 export type _SymptomLog = Models[m.SymptomLog];
 export type _UserProfile = Models[m.UserProfile];

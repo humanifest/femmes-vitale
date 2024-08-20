@@ -11,12 +11,13 @@ export const UserProfile = a
     avatar: a.string(),
     birthday: a.date(),
     ovulationCycles: a.hasMany(m.OvulationCycle, "userProfileId"),
+    medicationLogs: a.hasMany(m.MedicationLog, "userProfileId"),
     ovulationPredictions: a.hasMany(m.OvulationPrediction, "userProfileId"),
     fertilityWindows: a.hasMany(m.FertilityWindow, "userProfileId"),
     basalBodyTemperatures: a.hasMany(m.BasalBodyTemperature, "userProfileId"),
     contraceptiveReminders: a.hasMany(m.ContraceptiveReminder, "userProfileId"),
     contraceptiveMethods: a.hasMany(m.ContraceptiveMethod, "userProfileId"),
-    OvulationCycleAnalysis: a.hasMany(
+    ovulationCycleAnalysis: a.hasMany(
       m.OvulationCycleAnalysis,
       "userProfileId"
     ),
