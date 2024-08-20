@@ -53,18 +53,6 @@ export const onCreateAutomatedUpdate = /* GraphQL */ `subscription OnCreateAutom
     updateData
     updateType
     updatedAt
-    userProfile {
-      avatar
-      birthday
-      createdAt
-      email
-      id
-      profileOwner
-      updatedAt
-      uuid
-      __typename
-    }
-    userProfileId
     uuid
     __typename
   }
@@ -770,10 +758,6 @@ export const onCreateUserProfile = /* GraphQL */ `subscription OnCreateUserProfi
       nextToken
       __typename
     }
-    automatedUpdates {
-      nextToken
-      __typename
-    }
     avatar
     basalBodyTemperatures {
       nextToken
@@ -939,18 +923,6 @@ export const onDeleteAutomatedUpdate = /* GraphQL */ `subscription OnDeleteAutom
     updateData
     updateType
     updatedAt
-    userProfile {
-      avatar
-      birthday
-      createdAt
-      email
-      id
-      profileOwner
-      updatedAt
-      uuid
-      __typename
-    }
-    userProfileId
     uuid
     __typename
   }
@@ -1656,10 +1628,6 @@ export const onDeleteUserProfile = /* GraphQL */ `subscription OnDeleteUserProfi
       nextToken
       __typename
     }
-    automatedUpdates {
-      nextToken
-      __typename
-    }
     avatar
     basalBodyTemperatures {
       nextToken
@@ -1825,18 +1793,6 @@ export const onUpdateAutomatedUpdate = /* GraphQL */ `subscription OnUpdateAutom
     updateData
     updateType
     updatedAt
-    userProfile {
-      avatar
-      birthday
-      createdAt
-      email
-      id
-      profileOwner
-      updatedAt
-      uuid
-      __typename
-    }
-    userProfileId
     uuid
     __typename
   }
@@ -2539,10 +2495,6 @@ export const onUpdateUserProfile = /* GraphQL */ `subscription OnUpdateUserProfi
       __typename
     }
     articles {
-      nextToken
-      __typename
-    }
-    automatedUpdates {
       nextToken
       __typename
     }

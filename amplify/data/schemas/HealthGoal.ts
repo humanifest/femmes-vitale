@@ -6,7 +6,6 @@ export const HealthGoal = a
     uuid: a.string().required(),
     userProfileId: a.id(),
     userProfile: a.belongsTo(m.UserProfile, "userProfileId"),
-    progressReports: a.hasMany(m.ProgressReport, "goalId"),
     goalName: a.string(),
     goalDescription: a.string(),
     targetDate: a.date(),

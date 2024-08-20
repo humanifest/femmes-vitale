@@ -47,18 +47,6 @@ export const getAutomatedUpdate = /* GraphQL */ `query GetAutomatedUpdate($id: I
     updateData
     updateType
     updatedAt
-    userProfile {
-      avatar
-      birthday
-      createdAt
-      email
-      id
-      profileOwner
-      updatedAt
-      uuid
-      __typename
-    }
-    userProfileId
     uuid
     __typename
   }
@@ -701,10 +689,6 @@ export const getUserProfile = /* GraphQL */ `query GetUserProfile($id: ID!) {
       nextToken
       __typename
     }
-    automatedUpdates {
-      nextToken
-      __typename
-    }
     avatar
     basalBodyTemperatures {
       nextToken
@@ -863,7 +847,6 @@ export const listAutomatedUpdates = /* GraphQL */ `query ListAutomatedUpdates(
       updateData
       updateType
       updatedAt
-      userProfileId
       uuid
       __typename
     }

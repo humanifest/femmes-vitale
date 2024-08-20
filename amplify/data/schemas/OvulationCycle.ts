@@ -9,7 +9,6 @@ export const OvulationCycle = a
     analyses: a.hasMany(m.OvulationCycleAnalysis, "cycleId"),
     predictions: a.hasMany(m.OvulationPrediction, "cycleId"),
     fertilityWindows: a.hasMany(m.FertilityWindow, "cycleId"),
-    menstrualHealthInsight: a.hasMany(m.MenstrualHealthInsight, "cycleId"),
     startDate: a.date(),
     endDate: a.date(),
     flowIntensity: a.string(), // e.g., 'Light', 'Moderate', 'Heavy'

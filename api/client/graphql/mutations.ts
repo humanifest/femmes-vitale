@@ -53,18 +53,6 @@ export const createAutomatedUpdate = /* GraphQL */ `mutation CreateAutomatedUpda
     updateData
     updateType
     updatedAt
-    userProfile {
-      avatar
-      birthday
-      createdAt
-      email
-      id
-      profileOwner
-      updatedAt
-      uuid
-      __typename
-    }
-    userProfileId
     uuid
     __typename
   }
@@ -770,10 +758,6 @@ export const createUserProfile = /* GraphQL */ `mutation CreateUserProfile(
       nextToken
       __typename
     }
-    automatedUpdates {
-      nextToken
-      __typename
-    }
     avatar
     basalBodyTemperatures {
       nextToken
@@ -939,18 +923,6 @@ export const deleteAutomatedUpdate = /* GraphQL */ `mutation DeleteAutomatedUpda
     updateData
     updateType
     updatedAt
-    userProfile {
-      avatar
-      birthday
-      createdAt
-      email
-      id
-      profileOwner
-      updatedAt
-      uuid
-      __typename
-    }
-    userProfileId
     uuid
     __typename
   }
@@ -1656,10 +1628,6 @@ export const deleteUserProfile = /* GraphQL */ `mutation DeleteUserProfile(
       nextToken
       __typename
     }
-    automatedUpdates {
-      nextToken
-      __typename
-    }
     avatar
     basalBodyTemperatures {
       nextToken
@@ -1825,18 +1793,6 @@ export const updateAutomatedUpdate = /* GraphQL */ `mutation UpdateAutomatedUpda
     updateData
     updateType
     updatedAt
-    userProfile {
-      avatar
-      birthday
-      createdAt
-      email
-      id
-      profileOwner
-      updatedAt
-      uuid
-      __typename
-    }
-    userProfileId
     uuid
     __typename
   }
@@ -2539,10 +2495,6 @@ export const updateUserProfile = /* GraphQL */ `mutation UpdateUserProfile(
       __typename
     }
     articles {
-      nextToken
-      __typename
-    }
-    automatedUpdates {
       nextToken
       __typename
     }
